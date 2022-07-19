@@ -1,19 +1,35 @@
 <div class="container">
-  <h2>Bill Gates</h2>
-  <div class="about">
-    <img [src]="photoUrl" alt="" width="300" class="photo">
-    <p class="biography">{{biography}}</p>
-  </div>
+  <div class="header">
+    <div class="left">
+      <div class="full-name">
+        <span class="first-name">{{ firstName | uppercase}}</span>
+        <span class="last-name">{{ lastName | uppercase}}</span>
+      </div>
   
-  <div class="quotes">
-    <h2>Quotes</h2>
-  <app-quote class="quote" *ngFor="let q of quotes" [quote]='q' ></app-quote>
+      <div class="about">
+        <span class="position">{{position}}</span>
+        <span class="desc">{{desc}}</span>
+      </div>
+    </div>
+    <div class="right">
+      <img [src]="photoURL" alt="" width="100">
+    </div>
   </div>
-  
-  <div class="links">
-  <h2>Links</h2>
-  <ul>
-    <li *ngFor="let l of links"><a href="{{l}}">{{l}}</a></li>
-  </ul>
+  <div class="details">
+    <div class="section">
+      <app-experience [experience]="experience"></app-experience>
+    </div>
+    <div class="section">
+      <app-education [educations]="educations"></app-education>
+    </div>
+    <div class="section">
+      <app-skills [skills]="skills"></app-skills>
+    </div>
+    <div class="section">
+      <div class="section__title">Interests</div>
+      <div class="section__list" *ngFor="let int of Interests">
+        <div class="section__list-item">{{int}}</div>
+      </div>
+    </div>
   </div>
 </div>

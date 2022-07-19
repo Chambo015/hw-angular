@@ -1,17 +1,69 @@
 import { Component } from '@angular/core';
+import { Education, Experience, Rating } from './Interfaces';
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  photoUrl: string = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT12cP23udqvCqHW_2oAvK257g3oVQkv23tOumxtpfFOhHi8a5B'
-  biography: string = 'William Henry Gates III (born October 28, 1955) is an American business magnate, software developer, investor, author, and philanthropist. He is a co-founder of Microsoft, along with his late childhood friend Paul Allen. During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president and chief software architect, while also being the largest individual shareholder until May 2014. He was a major entrepreneur of the microcomputer revolution of the 1970s and 1980s.'
-  quotes: string[] = ['If you think your teacher is tough, wait till you get a boss.' ,'Life is not fair — get used to it!',
-  'Success is a lousy teacher. It seduces smart people into thinking they can’t lose.', 'Be nice to nerds. Chances are you’ll end up working for one.']
-  links: string[] = ['https://en.wikipedia.org/wiki/Bill_Gates',
-  'https://www.gatesfoundation.org/',
-  'https://www.gatesnotes.com/',
-  'https://twitter.com/billgates']
+  firstName : string = 'Eraly'
+  lastName: string = 'Aisahanov'
+  position: string = 'Front-End Developer'
+  desc: string = " I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow."
+  photoURL: string = 'https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg'
+  educations: Education[] = [
+    {
+      title: 'Fr developer',
+      city: 'San Fr, CA',
+      date: {
+        start: new Date(2011, 0),
+        end: new Date(2015, 1),
+      },
+      desc: 'did This and that',
+      university: 'Sample Institute of technology',
+    },
+    {
+      title: 'Fr developer',
+      city: 'San Monica, CA',
+      date: {
+        start: new Date(2011, 0),
+        end: new Date(2015, 1),
+      },
+      desc: 'did This and that, did This and that',
+      university: 'Akount',
+    },
+  ]
+  experience: Experience[] = [{
+    position: 'C# developer',
+    city: 'San Fr, CA',
+    date: {
+      start: new Date(2015, 1),
+      end: new Date(2017, 1),
+    },
+    desc: 'did This and that, did This and that, did This and that',
+    company: 'Microsoft'
+  },
+  {
+    position: 'Angular developer',
+    city: 'San Monica, CA',
+    date: {
+      start: new Date(2017, 6),
+      end: new Date(2022, 1),
+    },
+    desc: 'did This and that, did This and that, did This and that',
+    company: 'Google'
+  }]
+
+  skills: Record<string, Rating> = {
+    'Javascript': 4,
+    'CSS': 3,
+    'HTML': 4,
+    'Vue': 3,
+    'Angular': 5
+  }
+
+  Interests: string[] = ['Football', 'programming','books', 'VideoGames']
 }
